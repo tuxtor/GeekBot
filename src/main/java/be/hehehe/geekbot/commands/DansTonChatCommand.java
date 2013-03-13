@@ -16,7 +16,7 @@ import be.hehehe.geekbot.utils.IRCUtils;
 
 import com.google.common.collect.Lists;
 
-@BotCommand
+//@BotCommand
 public class DansTonChatCommand {
 
 	// key from android apk
