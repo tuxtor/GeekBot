@@ -70,7 +70,7 @@ public class Own3dCommand {
 		}
 	}
 
-	@TimedAction(1)
+	//@TimedAction(1)
 	@SuppressWarnings("unchecked")
 	public List<String> updateStreams() {
 		List<String> alerts = Lists.newArrayList();

@@ -211,12 +211,15 @@ public class GeekBot {
 			// this message is not a trigger, try to proc something randomly
 			for (Method randomMethod : randoms) {
 				if (isMethodAllowedToRun(channel, randomMethod)) {
-					int rand = new Random().nextInt(100) + 1;
+					int rand = new Random().nextInt(500) + 1;
 					int probability = randomMethod.getAnnotation(
 							RandomAction.class).value();
+					
 					if (rand <= probability) {
+						log.error("Invoked random method: "+rand+"-"+probability);
 						invokeTrigger(channel, randomMethod,
 								buildEvent(channel, message, author, null));
+						
 						break;
 					}
 				}

@@ -10,7 +10,7 @@ import be.hehehe.geekbot.bot.TriggerEvent;
  * ROT13 Algorithm
  * 
  */
-@BotCommand
+//@BotCommand
 public class Rot13Command {
 
 	@Trigger(value = "!rot13", type = TriggerType.STARTSWITH)

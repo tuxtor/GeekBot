@@ -27,7 +27,7 @@ import com.google.common.collect.Maps;
  * Horoscope from astrocenter.fr (French)
  * 
  */
-@BotCommand
+//@BotCommand
 public class HoroscopeCommand {
 
 	@Inject

@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 
@@ -41,17 +42,20 @@ public class BuzzCommand {
 
 	@SuppressWarnings("unchecked")
 	@Trigger("!buzz")
-	@Help("Fetches one of the latest posts from jeanmarcmorandini.com")
+	@Help("Fetches one of the latest posts from javaworld.com")
 	public List<String> getLatestBuzz() {
 		List<String> toReturn = new ArrayList<String>();
 		try {
-			URL url = new URL("http://www.jeanmarcmorandini.com/rss.php");
+			URL url = new URL("http://www.javaworld.com/index.xml");
 			SyndFeedInput input = new SyndFeedInput();
 			SyndFeed rss = input.build(new XmlReader(url));
 
 			Iterator<SyndEntry> it = rss.getEntries().iterator();
 			String message = null;
 			while (it.hasNext()) {
+				
+				
+				
 				SyndEntry item = it.next();
 				String guid = item.getUri();
 				RSSFeed buzz = dao.findByGUID(guid);
@@ -60,19 +64,15 @@ public class BuzzCommand {
 					buzz.setGuid(item.getUri());
 					dao.save(buzz);
 					String urlBitly = utilsService.bitly(item.getLink());
-					String content = Jsoup
-							.parse(item.getDescription().getValue())
-							.select("p").get(0).text();
 					message = IRCUtils.bold("EXCLU!") + " " + item.getTitle()
 							+ " - " + urlBitly;
 					toReturn.add(message);
-					toReturn.add(content);
 					break;
 				}
 			}
 
 			if (message == null) {
-				toReturn.add("Pas d'exclus pour le moment.");
+				toReturn.add("0 news");
 			}
 
 		} catch (Exception e) {

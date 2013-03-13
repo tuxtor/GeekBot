@@ -17,7 +17,7 @@ import be.hehehe.geekbot.annotations.Trigger;
 import be.hehehe.geekbot.utils.BotUtilsService;
 import be.hehehe.geekbot.utils.IRCUtils;
 
-@BotCommand
+//@BotCommand
 public class NeufBlagueCommand {
 
 	@Inject

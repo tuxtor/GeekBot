@@ -34,7 +34,7 @@ public class GoogleCommand {
 	Logger log;
 
 	public enum Lang {
-		FRENCH("fr"), ENGLISH("en");
+		FRENCH("fr"), ENGLISH("en"), SPANISH("es");
 
 		private Lang(String lang) {
 			this.lang = lang;
@@ -69,10 +69,10 @@ public class GoogleCommand {
 		return google(event.getMessage(), Lang.ENGLISH, Mode.WEB);
 	}
 
-	@Trigger(value = "!googlefr", type = TriggerType.STARTSWITH)
+	@Trigger(value = "!googlees", type = TriggerType.STARTSWITH)
 	@Help("Google search (French).")
 	public List<String> googlefr(TriggerEvent event) {
-		return google(event.getMessage(), Lang.FRENCH, Mode.WEB);
+		return google(event.getMessage(), Lang.SPANISH, Mode.WEB);
 	}
 
 	@Trigger(value = "!image", type = TriggerType.STARTSWITH)
@@ -81,10 +81,10 @@ public class GoogleCommand {
 		return google(event.getMessage(), Lang.ENGLISH, Mode.IMAGE);
 	}
 
-	@Trigger(value = "!imagefr", type = TriggerType.STARTSWITH)
+	@Trigger(value = "!imagees", type = TriggerType.STARTSWITH)
 	@Help("Google Image search (French).")
 	public List<String> imagefr(TriggerEvent event) {
-		return google(event.getMessage(), Lang.FRENCH, Mode.IMAGE);
+		return google(event.getMessage(), Lang.SPANISH, Mode.IMAGE);
 	}
 
 	public List<String> google(String keywords, Lang lang, Mode mode) {

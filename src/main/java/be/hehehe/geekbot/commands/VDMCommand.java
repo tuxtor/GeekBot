@@ -24,7 +24,7 @@ import com.google.common.collect.Lists;
  * Gives back a random VDM (French)
  * 
  */
-@BotCommand
+//@BotCommand
 public class VDMCommand {
 
 	@Inject
@@ -60,7 +60,7 @@ public class VDMCommand {
 
 		try {
 			String url = "http://api.betacie.com/view/" + vdmId
-					+ "/nocomment/?key=" + key + "&language=fr";
+					+ "/nocomment/?key=" + key + "&language=es";
 			String xml = utilsService.getContent(url);
 			Document doc = utilsService.parseXML(xml);
 

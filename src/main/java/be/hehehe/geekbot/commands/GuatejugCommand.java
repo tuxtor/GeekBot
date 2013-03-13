@@ -26,7 +26,7 @@ import com.sun.syndication.io.SyndFeedInput;
  * 
  */
 @BotCommand
-public class SteamCommand {
+public class GuatejugCommand {
 
 	@Inject
 	BotUtilsService utilsService;
@@ -38,11 +38,11 @@ public class SteamCommand {
 	Logger log;
 
 	@SuppressWarnings("unchecked")
-	//@TimedAction(1)
+	@TimedAction(1)
 	public List<String> getLatestPost() {
 		List<String> toReturn = new ArrayList<String>();
 		try {
-			String url = "http://store.steampowered.com/feeds/news.xml";
+			String url = "http://www.guate-jug.net/feed/";
 			SyndFeedInput input = new SyndFeedInput();
 			SyndFeed rss = input.build(new StringReader(utilsService
 					.getContent(url)));
@@ -54,7 +54,7 @@ public class SteamCommand {
 				String guid = item.getUri();
 				RSSFeed steam = dao.findByGUID(guid);
 				if (steam == null) {
-					message = IRCUtils.bold("Steam!") + " "
+					message = IRCUtils.bold("Guatejug!") + " "
 							+ StringEscapeUtils.unescapeXml(item.getTitle())
 							+ " - " + utilsService.bitly(item.getLink());
 					toReturn.add(message);

@@ -35,16 +35,16 @@ public class WikiCommand {
 		return getWikiResults(event);
 	}
 
-	@Trigger(value = "!wikifr", type = TriggerType.STARTSWITH)
-	@Help("Wikipedia search (French).")
-	public List<String> getWikiResultsfr(TriggerEvent event) {
+	@Trigger(value = "!wikies", type = TriggerType.STARTSWITH)
+	@Help("Wikipedia search (Spanish).")
+	public List<String> getWikiResultses(TriggerEvent event) {
 		return googleCommand.google("wikipedia " + event.getMessage(),
-				Lang.FRENCH, Mode.WEB);
+				Lang.SPANISH, Mode.WEB);
 	}
 
-	@Trigger(value = "!wikipediafr", type = TriggerType.STARTSWITH)
-	@Help("Wikipedia search (French).")
-	public List<String> getWikiResults2fr(TriggerEvent event) {
-		return getWikiResultsfr(event);
+	@Trigger(value = "!wikipediaes", type = TriggerType.STARTSWITH)
+	@Help("Wikipedia search (Spanish).")
+	public List<String> getWikiResults2es(TriggerEvent event) {
+		return getWikiResults2es(event);
 	}
 }

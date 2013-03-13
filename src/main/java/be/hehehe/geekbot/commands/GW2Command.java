@@ -18,7 +18,7 @@ import be.hehehe.geekbot.utils.BotUtilsService;
 
 import com.google.common.collect.Lists;
 
-@BotCommand
+//@BotCommand
 public class GW2Command {
 
 	private static final String URL = "http://mos.millenium.org/matchups/";
