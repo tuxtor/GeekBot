@@ -15,6 +15,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<github.global.server>github</github.global.server>
 		<wicket.version>6.4.0</wicket.version>
+    	<webXmlPath>${basedir}/src/main/webapp/WEB-INF/web.xml</webXmlPath>
 	</properties>
 
 	<developers>
@@ -280,6 +281,11 @@
 			<artifactId>arquillian-glassfish-embedded-3.1</artifactId>
 			<version>1.0.0.CR3</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.1-901-1.jdbc4</version>
 		</dependency>
 	</dependencies>
 
