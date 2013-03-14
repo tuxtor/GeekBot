@@ -46,7 +46,7 @@ public class ConnerieCommand {
 	}
 
 	@RandomAction(1)
-	@Trigger(type = TriggerType.BOTNAME)
+	//@Trigger(type = TriggerType.BOTNAME)
 	public String getRandomLine() {
 		return dao.getRandom().getValue();
 	}

@@ -22,7 +22,7 @@ import be.hehehe.geekbot.utils.IRCUtils;
  * 
  * 
  */
-@BotCommand
+//@BotCommand
 public class BlagueCommand {
 
 	@Inject
